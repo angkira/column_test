@@ -1,3 +1,4 @@
+import { ItemService } from './../../services/item.service';
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
@@ -8,7 +9,7 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class ItemListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private itemService: ItemService) { }
 
   ngOnInit() {
   }
