@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+# HTML-files compiled from PUG 
+src/**/*.html
+
