@@ -60,3 +60,5 @@ typings/
 # HTML-files compiled from PUG 
 src/**/*.html
 
+#built project
+dist
