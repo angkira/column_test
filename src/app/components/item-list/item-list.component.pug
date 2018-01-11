@@ -1,11 +1,11 @@
 .list
   .list-filter
     .list-sort
-      input(type="checkbox", name="Sort" [value]="sort")
+      input(type="checkbox", (click)="toggleSortReverse()")
       label Sort
     .list-search
-      input(type="text", name="SearchBox" [value]="search")
+      input(type="text", (keyup)="detect()", [value]="search", placeholder="Search")
     .list-checkbox-filter
 
   .list-item(*ngIf = "items.length")
-    app-item(*ngFor="let item of items | searchItem: search; trackBy: index", [item]="item")
+    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search; trackBy: name", [item]="item")

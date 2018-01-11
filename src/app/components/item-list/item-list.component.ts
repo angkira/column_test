@@ -13,16 +13,22 @@ export class ItemListComponent implements OnInit {
   constructor(private itemService: ItemService,
               private detector: ChangeDetectorRef) { }
 
-  items: Item[] = [];
-  sort: boolean;
-  search: string;
+  public items: Item[] = [];
+  public sort: boolean = false;
+  public search: string = '';
   ngOnInit() {
     this.itemService.items
       .subscribe((data:Item[]) => {
         this.items = data;
         this.detector.detectChanges();
-      });
+  });
     
+  }
+  toggleSortReverse(value?):void {
+    this.sort = value ? value : !this.sort;
+  }
+  public detect():void {
+    this.detector.detectChanges();
   }
 
 }

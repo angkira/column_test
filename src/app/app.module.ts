@@ -1,4 +1,3 @@
-import { SearchItemPipe } from './pipes/search.pipe';
 import { ItemService } from './services/item.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -10,6 +9,8 @@ import { ItemInfoComponent } from './components/item-info/item-info.component';
 import { ItemComponent } from './components/item/item.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { OrderModule } from 'ngx-order-pipe';
+import { SearchItemPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    OrderModule
   ],
   providers: [ItemService],
   bootstrap: [AppComponent]
