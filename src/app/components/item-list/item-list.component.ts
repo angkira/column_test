@@ -17,7 +17,7 @@ export class ItemListComponent implements OnInit {
 
   public items: Item[] = [];
   public sort: boolean = false;
-  public separately: boolean = false;
+  public separately: boolean = true;
 
   public search: string = '';
   @Input()
@@ -30,7 +30,10 @@ export class ItemListComponent implements OnInit {
         this.items = data;
         this.detector.detectChanges();
   });
-    
+  }
+
+  public selectItem(item:Item):void {
+    this.itemService.selectItem(item)
   }
   public toggleSortReverse(value?):void {
     this.sort = value ? value : !this.sort;

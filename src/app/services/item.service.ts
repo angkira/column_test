@@ -1,19 +1,26 @@
 import { Item } from '../common/classes/item';
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { Subscription } from 'rxjs/Subscription';
 
 @Injectable()
 export class ItemService {
 
   private _items: Item[] = [];
-  public currentItem: Item;
-  request: Subscription;
-  constructor(private http: HttpClient) { }
+  private _currentItem: Item;
+  @Output()
+  itemChoosen: EventEmitter<Object>;
+  constructor(private http: HttpClient) {
+    this.itemChoosen = new EventEmitter();
+   }
 
-  public selectItem(item: Item) {
-    this.currentItem = item;
+  get currentItem(): Item {
+    return this._currentItem;
+  }
+
+  public selectItem(item: Item): void {
+    this._currentItem = item;    
+    this.itemChoosen.emit();
   }
 
   get items(): Observable<Object> {

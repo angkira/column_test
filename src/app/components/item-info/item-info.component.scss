@@ -1,0 +1,13 @@
+@import "../../common/styles/mixins.scss";
+
+.item-info {
+  max-height: 200px;
+  &_field {
+    margin: 10px;
+    .flags {
+      .flag {
+        @include item-flags();
+      }
+    }
+  }
+}

@@ -1,13 +1,16 @@
 @import "../../common/styles/mixins.scss";
 
 .item {
+  padding: 10px;
+  &:hover {
+    background: #ccccee;
+  }
   .item-name{
     font-size: 16px;
   }
   .item-flags {
     margin: 10px;
-    .flag {
-      
+    .flag {      
       @include item-flags();
     }
   }

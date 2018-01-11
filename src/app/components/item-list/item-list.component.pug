@@ -6,12 +6,13 @@
     .list-filter_search(*ngIf="model.search")
       input(type="text", (keyup)="detectSearchWord($event)", placeholder="Search")
     .list-filter_checkbox(*ngIf="model.filter")
-      .exact((click)="toggleSeparate()")
-        input(type="checkbox")
-        label Find separately
+      .header Filters:      
       .filter(*ngFor="let filter of filterModel.filters; trackBy: name", (click)="filter.active = !filter.active", [class.active]="filter.active")
         .checkbox([ngClass]="filter.name")
+      .exact((click)="toggleSeparate()")
+        input(type="checkbox", [value]="separately")
+        label Find separately
       
 
   .list-item(*ngIf = "items.length")
-    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search : filterModel.filters : separately; trackBy: name", [item]="item")
+    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search : filterModel.filters : separately; trackBy: name", [item]="item", (click)="selectItem(item)")

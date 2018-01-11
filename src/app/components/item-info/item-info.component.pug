@@ -1,8 +1,10 @@
 .item-info
   .item-info_field
-    .name Name:
-      .value {{ item.name }}
+    span.name Name:
+       span.value {{ item.name }}
+  .item-info_field
     .flags
+      span Flags:
       .flag(*ngFor="let flag of item.flags", [ngClass]="flag")
 
 
