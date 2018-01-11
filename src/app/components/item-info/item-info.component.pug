@@ -1,11 +1,11 @@
 .item-info
   h4 Current item
   .item-info_field
-    span.name Name:
+    span.name Name:&nbsp;
        span.value {{ item.name }}
   .item-info_field
     .flags
-      span Flags:
+      .label Flags:
       .flag(*ngFor="let flag of item.flags", [ngClass]="flag")
 
 
