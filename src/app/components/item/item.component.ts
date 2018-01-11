@@ -1,4 +1,4 @@
-import { Item } from './../../item';
+import { Item } from './../../common/classes/item';
 import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({

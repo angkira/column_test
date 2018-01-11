@@ -1,6 +1,8 @@
-import { Item } from './../../item';
+import { FilterModel } from './../../common/classes/filter-model';
+import { ItemListModel } from '../../common/classes/item-list-model';
+import { Item } from '../../common/classes/item';
 import { ItemService } from './../../services/item.service';
-import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item-list',
@@ -15,8 +17,14 @@ export class ItemListComponent implements OnInit {
 
   public items: Item[] = [];
   public sort: boolean = false;
+  public separately: boolean = false;
+
   public search: string = '';
+  @Input()
+  public model: ItemListModel;
+  public filterModel: FilterModel;
   ngOnInit() {
+    this.filterModel = new FilterModel();
     this.itemService.items
       .subscribe((data:Item[]) => {
         this.items = data;
@@ -26,6 +34,9 @@ export class ItemListComponent implements OnInit {
   }
   public toggleSortReverse(value?):void {
     this.sort = value ? value : !this.sort;
+  }
+  public toggleSeparate(value?):void {
+    this.separately = value ? value : !this.separately;
   }
   public detectSearchWord(e):void {
     this.search = e.target.value;

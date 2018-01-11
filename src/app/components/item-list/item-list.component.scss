@@ -1,0 +1,24 @@
+@import "../../common/styles/mixins.scss";
+
+.list {
+  &-filter {
+    &_checkbox {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      .filter {
+        display: inline-block;
+        border-radius: 50%;
+        height: 35px;
+        &.active {
+          border: solid 1px red
+        }
+        .checkbox {
+          position: relative;
+          transition: .1s border;
+          @include item-flags();          
+        }
+      }
+    }
+  }
+}

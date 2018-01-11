@@ -1,4 +1,4 @@
-import { Item } from './../item';
+import { Item } from '../common/classes/item';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
@@ -8,8 +8,13 @@ import { Subscription } from 'rxjs/Subscription';
 export class ItemService {
 
   private _items: Item[] = [];
+  public currentItem: Item;
   request: Subscription;
   constructor(private http: HttpClient) { }
+
+  public selectItem(item: Item) {
+    this.currentItem = item;
+  }
 
   get items(): Observable<Object> {
     if (this._items.length) {

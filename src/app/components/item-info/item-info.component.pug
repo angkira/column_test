@@ -1,1 +1,8 @@
+.item-info
+  .item-info_field
+    .name Name:
+      .value {{ item.name }}
+    .flags
+      .flag(*ngFor="let flag of item.flags", [ngClass]="flag")
+
 

@@ -1,11 +1,17 @@
 .list
   .list-filter
-    .list-sort((click)="toggleSortReverse()")
+    .list-filter_sort(*ngIf="model.sort", (click)="toggleSortReverse()")
       input(type="checkbox")
       label Sort
-    .list-search
+    .list-filter_search(*ngIf="model.search")
       input(type="text", (keyup)="detectSearchWord($event)", placeholder="Search")
-    .list-checkbox-filter
+    .list-filter_checkbox(*ngIf="model.filter")
+      .exact((click)="toggleSeparate()")
+        input(type="checkbox")
+        label Find separately
+      .filter(*ngFor="let filter of filterModel.filters; trackBy: name", (click)="filter.active = !filter.active", [class.active]="filter.active")
+        .checkbox([ngClass]="filter.name")
+      
 
   .list-item(*ngIf = "items.length")
-    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search; trackBy: name", [item]="item")
+    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search : filterModel.filters : separately; trackBy: name", [item]="item")
