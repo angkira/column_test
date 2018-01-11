@@ -23,6 +23,7 @@ export class ItemListComponent implements OnInit {
   @Input()
   public model: ItemListModel;
   public filterModel: FilterModel;
+  public activeItem: Item;
   ngOnInit() {
     this.filterModel = new FilterModel();
     this.itemService.items
@@ -30,6 +31,10 @@ export class ItemListComponent implements OnInit {
         this.items = data;
         this.detector.detectChanges();
   });
+    this.itemService.itemChoosen.subscribe(()=> {
+      this.activeItem = this.itemService.currentItem;
+      this.detector.detectChanges();
+    })
   }
 
   public selectItem(item:Item):void {

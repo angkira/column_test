@@ -15,4 +15,6 @@
       
 
   .list-item(*ngIf = "items.length")
-    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search : filterModel.filters : separately; trackBy: name", [item]="item", (click)="selectItem(item)")
+    app-item(*ngFor="let item of items | orderBy: 'name': sort | searchItem: search : filterModel.filters : separately; trackBy: name", 
+    [item]="item", (click)="selectItem(item)",
+    [active]="activeItem && activeItem.name == item.name")
