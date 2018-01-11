@@ -8,8 +8,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class SearchItemPipe implements PipeTransform {
   transform(items: Item[], searchWord: string): Item[] {
-    console.log(searchWord);
-    
     return searchWord ? items.filter(item => {
       return item.name.toLowerCase()
         .includes(searchWord.toLowerCase())

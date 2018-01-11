@@ -24,11 +24,11 @@ export class ItemListComponent implements OnInit {
   });
     
   }
-  toggleSortReverse(value?):void {
+  public toggleSortReverse(value?):void {
     this.sort = value ? value : !this.sort;
   }
-  public detect():void {
-    this.detector.detectChanges();
+  public detectSearchWord(e):void {
+    this.search = e.target.value;
   }
 
 }

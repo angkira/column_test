@@ -1,10 +1,10 @@
 .list
   .list-filter
-    .list-sort
-      input(type="checkbox", (click)="toggleSortReverse()")
+    .list-sort((click)="toggleSortReverse()")
+      input(type="checkbox")
       label Sort
     .list-search
-      input(type="text", (keyup)="detect()", [value]="search", placeholder="Search")
+      input(type="text", (keyup)="detectSearchWord($event)", placeholder="Search")
     .list-checkbox-filter
 
   .list-item(*ngIf = "items.length")
