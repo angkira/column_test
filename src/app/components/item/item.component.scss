@@ -1,0 +1,29 @@
+.item {
+  .item-name{
+    font-size: 16px;
+  }
+  .item-flags {
+    margin: 10px;
+    .flag {
+      margin: 5px;
+      width: 25px;
+      height: 25px;
+      display: inline-block;
+      background-color: transparent;
+      background-size: cover;
+      
+      &.sun {
+        background-image: url('../../../assets/sun.png')
+      }
+      &.heart {
+        background-image: url('../../../assets/heart.png')
+      }
+      &.flower {
+        background-image: url('../../../assets/flower.png')
+      }
+      &.flash {
+        background-image: url('../../../assets/flash.png')
+      }
+    }
+  }
+}

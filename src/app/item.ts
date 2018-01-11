@@ -1,4 +1,4 @@
 export class Item {
   name: string;
-  flag: ('flower' | 'heart' | 'sun' | 'flash')[];
+  flags: ('flower' | 'heart' | 'sun' | 'flash')[];
 }

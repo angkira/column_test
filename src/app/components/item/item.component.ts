@@ -4,8 +4,7 @@ import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
 

@@ -1,3 +1,4 @@
 .item
   .item-name {{item.name}}
   .item-flags
+    .flag(*ngFor="let flag of item.flags", [ngClass]="flag")
