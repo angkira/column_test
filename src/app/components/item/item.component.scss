@@ -1,12 +1,13 @@
 @import "../../common/styles/mixins.scss";
+@import "../../common/styles/variables.scss";
 
 .item {
   padding: 10px;
   &.active {
-    border: 1px solid #17175c;    
+    border: 1px solid $border-color;    
   }
   &:hover {
-    background: #ccccee;
+    background: $hover-color;
   }
   .item-name{
     font-size: 16px;

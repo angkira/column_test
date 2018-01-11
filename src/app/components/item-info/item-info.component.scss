@@ -1,7 +1,10 @@
 @import "../../common/styles/mixins.scss";
 
 .item-info {
+  @include material-card();
+  min-height: 120px;
   max-height: 200px;
+  padding: 20px 10px;
   &_field {
     margin: 10px;
     .flags {

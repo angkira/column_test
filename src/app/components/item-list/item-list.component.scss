@@ -1,27 +1,64 @@
 @import "../../common/styles/mixins.scss";
-
+@import "../../common/styles/variables.scss";
 .list {
-  &-filter {
-    &_checkbox {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      .filter {
-        display: inline-block;
-        border-radius: 50%;
-        height: 35px;
-        &.active {
-          border: solid 1px red
-        }
-        .checkbox {
-          position: relative;
-          transition: .1s border;
-          @include item-flags();          
+   @include material-card();
+   &-filter {
+      padding: 20px 10px;
+      border-bottom: 1px solid $border-color;
+      min-height: 120px;
+      &_sort {
+        margin: 0 10px;
+        label {
+          margin: 0 20px;
         }
       }
-    }
-  }
-  &-item {
-    padding: 10px;
-  }
+      &_search {
+        margin: 10px;
+        input {
+          width: 90%;
+          padding: 5px 10px;
+        }
+      }
+      &_checkbox {
+        .header {
+          line-height: 25px;
+          margin-bottom: 10px;
+        }
+        .extra {
+          margin: 10px;
+           label {
+              margin: 10px 20px;
+           }
+        }
+        .filters-list {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          margin: 0 10px;
+          .filter {
+            border-radius: 50%;
+            height: 35px;
+            border: solid 1px transparent;
+            transition: .1s ease;
+            &:hover {
+              border: solid 1px $hover-color;
+            }
+            &.active {              
+              border: solid 1px $hover-color;
+              box-shadow: 0 1px 5px $border-color;
+            }
+            .checkbox {
+              position: relative;
+              transition: .1s border;
+              @include item-flags();
+            }
+          }
+        }
+      }
+   }
+   &-item {
+      padding: 10px;
+      max-height: calc(100vh - 20px);
+      overflow-y: scroll;
+   }
 }

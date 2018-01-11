@@ -1,15 +1,12 @@
+@import "./common/styles/variables.scss";
+
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  .list-wrapper,
-  .info-wrapper {
-    border: 1px solid rgb(45, 72, 122);
-    max-width: 300px;
-  }
-  .info-wrapper {
-    max-height: 300px;
+  div {
+    padding: 10px;
   }
 }

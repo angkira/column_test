@@ -1,15 +1,16 @@
 .list
   .list-filter
     .list-filter_sort(*ngIf="model.sort", (click)="toggleSortReverse()")
-      input(type="checkbox")
-      label Sort
+      input(type="checkbox", [value]="sort")
+      label Sort reverse
     .list-filter_search(*ngIf="model.search")
       input(type="text", (keyup)="detectSearchWord($event)", placeholder="Search")
     .list-filter_checkbox(*ngIf="model.filter")
-      .header Filters:      
-      .filter(*ngFor="let filter of filterModel.filters; trackBy: name", (click)="filter.active = !filter.active", [class.active]="filter.active")
-        .checkbox([ngClass]="filter.name")
-      .exact((click)="toggleSeparate()")
+      .header Filters:
+      .filters-list      
+        .filter(*ngFor="let filter of filterModel.filters; trackBy: name", (click)="filter.active = !filter.active", [class.active]="filter.active")
+          .checkbox([ngClass]="filter.name")
+      .extra((click)="toggleSeparate()")
         input(type="checkbox", [value]="separately")
         label Find separately
       
