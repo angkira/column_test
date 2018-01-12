@@ -1,7 +1,7 @@
 .list
   .list-filter
     .list-filter_sort(*ngIf="model.sort", (click)="toggleSortReverse()")
-      input(type="checkbox", [value]="sort")
+      .fa([ngClass]="sort ? 'fa-check-square-o' : 'fa-square-o'")
       label Sort reverse
     .list-filter_search(*ngIf="model.search")
       input(type="text", (keyup)="detectSearchWord($event)", placeholder="Search")
@@ -11,7 +11,7 @@
         .filter(*ngFor="let filter of filterModel.filters; trackBy: name", (click)="filter.active = !filter.active", [class.active]="filter.active")
           .checkbox([ngClass]="filter.name")
       .extra((click)="toggleSeparate()")
-        input(type="checkbox", [value]="separately")
+        .fa([ngClass]="separately ? 'fa-check-square-o' : 'fa-square-o'")
         label Find separately
       
 
