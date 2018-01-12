@@ -3,6 +3,7 @@
 
 .item {
   padding: 10px;
+  transition: .1s ease-in-out;
   &.active {
     border: 1px solid $border-color;    
   }

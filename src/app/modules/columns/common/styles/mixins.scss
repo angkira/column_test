@@ -6,16 +6,16 @@
   background-color: transparent;
   background-size: cover;
   &.sun {
-    background-image: url('../../../assets/sun.png')
+    background-image: url('../../../../../assets/sun.png')
   }
   &.heart {
-    background-image: url('../../../assets/heart.png')
+    background-image: url('../../../../../assets/heart.png')
   }
   &.flower {
-    background-image: url('../../../assets/flower.png')
+    background-image: url('../../../../../assets/flower.png')
   }
   &.flash {
-    background-image: url('../../../assets/flash.png')
+    background-image: url('../../../../../assets/flash.png')
   }
 }
 @mixin material-card() {

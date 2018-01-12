@@ -1,5 +1,6 @@
-import { ItemListModel } from './common/classes/item-list-model';
+
 import { Component } from '@angular/core';
+import { ItemListModel } from './modules/columns/common/classes/item-list-model';
 
 @Component({
   selector: 'app-root',
