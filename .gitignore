@@ -59,6 +59,6 @@ typings/
 
 # HTML-files compiled from PUG 
 src/**/*.html
-
+!src/index.html
 #built project
 dist
